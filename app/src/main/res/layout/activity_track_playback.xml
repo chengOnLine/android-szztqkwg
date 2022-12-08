@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+<!--    <com.amap.api.maps.MapView-->
+<!--        android:id="@+id/map"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"/>-->
+
+
+
+    <LinearLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/top_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/back_mapapp"
+            android:visibility="visible" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="日常巡逻"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/layout_size_5dip"
+            android:paddingTop="@dimen/layout_size_10dip"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/layout_size_10dip"
+            android:paddingRight="@dimen/layout_size_10dip">
+
+            <TextView
+                android:id="@+id/currrent_signAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="签到地址："
+                android:textSize="@dimen/text_size_16SP" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/currrent_signAddress"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_signAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text=""
+                    android:textSize="@dimen/text_size_16SP" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/layout_size_5dip"
+            android:paddingTop="@dimen/layout_size_10dip"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/layout_size_10dip"
+            android:paddingRight="@dimen/layout_size_10dip">
+
+            <TextView
+                android:id="@+id/current_qdtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="签到时间："
+                android:textSize="@dimen/text_size_16SP" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/current_qdtime"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_qdtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/blue1"
+                    android:textSize="@dimen/text_size_16SP" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/layout_size_5dip"
+            android:paddingTop="@dimen/layout_size_10dip"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/layout_size_10dip"
+            android:paddingRight="@dimen/layout_size_10dip">
+
+            <TextView
+                android:id="@+id/current_sc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="当前巡逻时长："
+                android:textSize="@dimen/text_size_16SP" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/current_sc"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_sc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/blue1"
+                    android:textSize="@dimen/text_size_16SP" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            >
+
+            <com.amap.api.maps.MapView
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </com.amap.api.maps.MapView>
+
+            <LinearLayout
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical"
+                >
+                <Button
+                    android:id="@+id/visual_3d"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/check_bg"
+                    android:textSize="@dimen/text_size_19SP"
+                    android:textColor="@color/white"
+                    android:text="3D"
+                    android:gravity="center"
+                    />
+                <Button
+                    android:id="@+id/visual_2d"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@drawable/normal_bg"
+                    android:textSize="@dimen/text_size_19SP"
+                    android:textColor="@color/white"
+                    android:text="2D"
+                    android:gravity="center"
+                    />
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="55dp"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            >
+            <Button
+                android:id="@+id/qiandaoBtn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/trackplay_btn_border"
+                android:textSize="@dimen/text_size_19SP"
+                android:textColor="@color/white"
+                android:text="签到"
+                android:gravity="center"
+                android:layout_marginRight="5dp"
+                />
+
+            <Button
+                android:id="@+id/qiantuiBtn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/dark_btn_border"
+                android:textSize="@dimen/text_size_16SP"
+                android:textColor="@color/white"
+                android:text="签退"
+                android:gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

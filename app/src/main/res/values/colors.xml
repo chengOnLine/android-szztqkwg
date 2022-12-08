@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="grey">#ebebeb</color>
+    <color name="black"> #000000</color>
+    <color name="darkgrey"> #C0C0C0</color>
+    <color name="white">#ffffff</color>
+    <color name="white2">#DDDDDD</color>
+    <color name="red"> #FF0000</color>
+    <color name="top_bg">#F7F7F8</color>
+    <color name="blue1">#0894EC</color>
+    <color name="blue2">#0A8DDF</color>
+
+    <color name="background">#FFFFFF</color>
+    <color name="split_line">#11112233</color>
+    <color name="text1">#59B29C</color>
+    <color name="text2">#333333</color>
+
+    <color name="color1">#0894EC</color>
+    <color name="color2">#9FBCD9</color>
+    <color name="color3">#5E6368</color>
+    <color name="color4">#379509</color>
+    <color name="color5">#B9CE06</color>
+    <color name="color6">#CE7706</color>
+    <color name="color7">#7F21FF</color>
+    <color name="color8">#AF3B17</color>
+    
+    <!-- custom -->
+    <color name="custom_blue">#1aa4f2</color>
+    <color name="custom_green">#01ad9f</color>
+    <color name="custom_line_color">#dadada</color>
+    <color name="text_color">#666666</color>
+    <color name="grey_border">#e9e9eb</color>
+    
+    <!-- 透明 -->
+    <color name="transparent">#00000000</color>
+    
+    <!-- 灰黑色 -->
+    <color name="grey_black">#3C4145</color>
+
+</resources>

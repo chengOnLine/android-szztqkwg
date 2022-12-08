@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: :SangforSDK:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/d21d54ce852e56adcb68397a8ff9fd8e/transformed/jetified-SangforSDK/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d21d54ce852e56adcb68397a8ff9fd8e/transformed/jetified-SangforSDK/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d21d54ce852e56adcb68397a8ff9fd8e/transformed/jetified-SangforSDK/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
