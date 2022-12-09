@@ -7,6 +7,12 @@
       <root url="file://$PROJECT_DIR$/../node_modules/react-native-reanimated/android/build/.transforms/f1f6b88428a70f9fe39393e1d359bc33/transformed/jetified-react-native-reanimated-67-hermes/AndroidManifest.xml" />
       <root url="jar://$PROJECT_DIR$/../node_modules/react-native-reanimated/android/build/.transforms/f1f6b88428a70f9fe39393e1d359bc33/transformed/jetified-react-native-reanimated-67-hermes/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../node_modules/react-native-reanimated/android/build/.transforms/f1f6b88428a70f9fe39393e1d359bc33/transformed/jetified-react-native-reanimated-67-hermes/res" />
+      <root url="jar://$PROJECT_DIR$/../node_modules/_react-native-reanimated@2.5.0@react-native-reanimated/android/build/.transforms/7c979eb5e4bd631d5473d588ebe2bdfa/transformed/jetified-react-native-reanimated-67-hermes/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../node_modules/_react-native-reanimated@2.5.0@react-native-reanimated/android/build/.transforms/7c979eb5e4bd631d5473d588ebe2bdfa/transformed/jetified-react-native-reanimated-67-hermes/res" />
+      <root url="file://$PROJECT_DIR$/../node_modules/_react-native-reanimated@2.5.0@react-native-reanimated/android/build/.transforms/7c979eb5e4bd631d5473d588ebe2bdfa/transformed/jetified-react-native-reanimated-67-hermes/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../node_modules/react-native-reanimated/android/build/.transforms/e47a6c31aba81966ce0b07cdaed4aa4f/transformed/jetified-react-native-reanimated-67-hermes/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/../node_modules/react-native-reanimated/android/build/.transforms/e47a6c31aba81966ce0b07cdaed4aa4f/transformed/jetified-react-native-reanimated-67-hermes/res" />
+      <root url="jar://$PROJECT_DIR$/../node_modules/react-native-reanimated/android/build/.transforms/e47a6c31aba81966ce0b07cdaed4aa4f/transformed/jetified-react-native-reanimated-67-hermes/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
