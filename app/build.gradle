@@ -79,8 +79,6 @@ import com.android.build.OutputFile
 
 project.ext.react = [
         enableHermes: true,  // clean and rebuild if changing 闪退修复ture??
-//        entryFile: "index.js",
-//        cliPath:"node_modules/react-native/local-cli/cli.js"
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
@@ -253,11 +251,6 @@ repositories {
     }
 }
 
-configurations.all {
-    resolutionStrategy {
-        force 'androidx.core:core:1.6.0'
-    }
-}
 dependencies {
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {

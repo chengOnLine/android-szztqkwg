@@ -35,6 +35,7 @@ public class Constant {
     public static String gridName;
     public static String qiandaoTime;
     public static String txtQiantuiDesc;
+    public static String address;
 
     //登陆验证
     public static String token;

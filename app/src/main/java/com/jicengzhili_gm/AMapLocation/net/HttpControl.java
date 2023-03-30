@@ -14,13 +14,13 @@ import org.json.JSONObject;
 public class HttpControl {
 
     //签到接口
-    public static final String signInControl="/jczl-flow/flow/dailyAttendance/dailySignIn";
+    public static final String signInControl="/qkwg-jcwg/flow/dailyAttendance/dailySignIn";
 
     //签退接口
-    public static final String signOutControl="/jczl-flow/flow/dailyAttendance/dailySignOut";
+    public static final String signOutControl="/qkwg-jcwg/flow/dailyAttendance/dailySignOut";
 
     //上传坐标
-    public static final String uploadControl="/jczl-flow/flow/userGis/uploadTraceList";
+    public static final String uploadControl="/qkwg-jcwg/flow/userGis/uploadTraceList";
 
 
 
@@ -45,13 +45,15 @@ public class HttpControl {
 
         String jsonresult = "";// 定义返回字符串
         try {
+            String addr = locationBean.getAddress() == "" ? Constant.address : locationBean.getAddress();
+
             JSONObject jsonObj = new JSONObject();// pet对象，json形式
             jsonObj.put("streetId",streetId);
             jsonObj.put("communityId",communityId);
             jsonObj.put("gridId",gridId);
             jsonObj.put("signLat", locationBean.getLatitude());// 向pet对象里面添加值
             jsonObj.put("signLng", locationBean.getLongitude());
-            jsonObj.put("signAddress", locationBean.getAddress());
+            jsonObj.put("signAddress", addr);
             jsonObj.put("userId", Constant.userId);
             jsonObj.put("taskType", 1);
             jsonObj.put("clientDate", Utils.formatUTC(System.currentTimeMillis(), "yyyy-MM-dd HH:mm:ss"));
@@ -71,19 +73,22 @@ public class HttpControl {
      * @param locationBean
      * @param mCallBack
      */
-    public static void doSignOutControl(LocationBean locationBean, Float mil, OkHttpClientManager.HttpCallBack mCallBack){
+    public static void doSignOutControl(LocationBean locationBean, Float mil, OkHttpClientManager.HttpCallBack mCallBack) {
         String url = "";
-        url = GetForMalIp()+signOutControl;
+        url = GetForMalIp() + signOutControl;
 
         String jsonresult = "";// 定义返回字符串
         try {
+            String addr = locationBean.getAddress() == "" ? Constant.address : locationBean.getAddress();
+
             JSONObject jsonObj = new JSONObject();// pet对象，json形式
             jsonObj.put("signOutLat", locationBean.getLatitude());// 向pet对象里面添加值
             jsonObj.put("signOutLng", locationBean.getLongitude());
-            jsonObj.put("signOutAddress", locationBean.getAddress());
+            jsonObj.put("signOutAddress", addr);
             jsonObj.put("userId", Constant.userId);
             jsonObj.put("totalMileage", mil);
             jsonObj.put("id", Constant.signId);
+            jsonObj.put("describe", Constant.txtQiantuiDesc);
             jsonresult = jsonObj.toString();// 生成返回字符串
         } catch (JSONException e) {
             // TODO Auto-generated catch block
@@ -91,7 +96,7 @@ public class HttpControl {
         }
 
         Log.e("alen", "访问URL = " + url);
-        Log.e("alen","提交数据："+jsonresult);
+        Log.e("alen", "提交数据：" + jsonresult);
 
         OkHttpClientManager.getInstance().postRequest(url, mCallBack, jsonresult);
     }

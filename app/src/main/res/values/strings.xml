@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">光明通</string>
+    <string name="app_name">治理通</string>
 
     <string name="ok">重新连接VPN</string>
     <string name="cancel">退出系统</string>

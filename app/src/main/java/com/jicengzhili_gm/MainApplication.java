@@ -4,6 +4,9 @@ import android.app.Application;
 import android.content.Context;
 import android.widget.Toast;
 
+import com.amap.api.location.AMapLocationClient;
+import com.jicengzhili_gm.utils.CrashUtil;
+
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
@@ -12,6 +15,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.jicengzhili_gm.AMapLocation.AMapLocationPackage;
 import com.jicengzhili_gm.AMapLocation.mapView.ReactModulePackage;
+//import com.mobappsec.hsecagent.HSecAgent;
 import com.sangfor.sdk.SFMobileSecuritySDK;
 import com.sangfor.sdk.base.SFConstants;
 import com.sangfor.sdk.base.SFSDKFlags;
@@ -60,9 +64,26 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
+    
+    CrashUtil.getInstance().init(this);
+
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+
+    updatePrivacyShow(this);
+
+    //初始化SDK配置信息
+//     HSecAgent.getInstance().initAgent(this);
   }
+
+  
+    public static void updatePrivacyShow(Context context){
+        try{
+            AMapLocationClient.updatePrivacyShow(context,true,true);
+            AMapLocationClient.updatePrivacyAgree(context,true);
+        }catch (Exception ex){
+        }
+    }
 
   /**
    * Loads Flipper in React Native templates. Call this in the onCreate method with something like
@@ -99,32 +120,33 @@ public class MainApplication extends Application implements ReactApplication {
 
 //    private static final String TAG = "MainApplication";
 //    private static SFSDKMode mSDKMode;
-//
+
 //    //  @Override
 //    public void attachBaseContext(Context base) {
-////        MultiDex.install(base);
+// //        MultiDex.install(base);
 //        super.attachBaseContext(base);
-//
-//
+
+
+// try {
 //        //只使用VPN功能场景
 //        SFSDKMode sdkMode = SFSDKMode.MODE_VPN;                 //表明启用VPN安全接入功能,详情参考集成指导文档
-////        //只使用安全沙箱功能场景
-////        SFSDKMode sdkMode = SFSDKMode.MODE_SANDBOX;             //表明启用安全沙箱功能,详情参考集成指导文档
-////        //同时使用VPN功能+安全沙箱功能场景
-////    SFSDKMode sdkMode = SFSDKMode.MODE_VPN_SANDBOX;         //表明同时启用VPN功能+安全沙箱功能,详情参考集成指导文档
-//
+// //        //只使用安全沙箱功能场景
+// //        SFSDKMode sdkMode = SFSDKMode.MODE_SANDBOX;             //表明启用安全沙箱功能,详情参考集成指导文档
+// //        //同时使用VPN功能+安全沙箱功能场景
+// //    SFSDKMode sdkMode = SFSDKMode.MODE_VPN_SANDBOX;         //表明同时启用VPN功能+安全沙箱功能,详情参考集成指导文档
+
 //        switch (sdkMode) {
 //            case MODE_VPN: {//只使用VPN功能场景
 //                int sdkFlags =  SFSDKFlags.FLAGS_HOST_APPLICATION;      //表明是单应用或者是主应用
 //                sdkFlags |= SFSDKFlags.FLAGS_VPN_MODE_TCP;              //表明使用VPN功能中的TCP模式
-//
+
 //                SFMobileSecuritySDK.getInstance().initSDK(base, sdkMode, sdkFlags, null);//初始化SDK
 //                break;
 //            }
 //            case MODE_SANDBOX: {//只使用安全沙箱功能场景
 //                int sdkFlags =  SFSDKFlags.FLAGS_HOST_APPLICATION;      //表明是单应用或者是主应用
 //                sdkFlags |= SFSDKFlags.FLAGS_ENABLE_FILE_ISOLATION;     //表明启用安全沙箱功能中的文件隔离功能
-//
+
 //                SFMobileSecuritySDK.getInstance().initSDK(base, sdkMode, sdkFlags, null);//初始化SDK
 //                break;
 //            }
@@ -132,7 +154,7 @@ public class MainApplication extends Application implements ReactApplication {
 //                int sdkFlags =  SFSDKFlags.FLAGS_HOST_APPLICATION;      //表明是单应用或者是主应用
 //                sdkFlags |= SFSDKFlags.FLAGS_VPN_MODE_TCP;              //表明使用VPN功能中的TCP模式
 //                sdkFlags |= SFSDKFlags.FLAGS_ENABLE_FILE_ISOLATION;     //表明启用安全沙箱功能中的文件隔离功能
-//
+
 //                SFMobileSecuritySDK.getInstance().initSDK(base, sdkMode, sdkFlags, null);//初始化SDK
 //                break;
 //            }
@@ -141,11 +163,13 @@ public class MainApplication extends Application implements ReactApplication {
 //                return;
 //            }
 //        }
-//
+
 //        //setAuthTimeout(30);//设置SDK网络超时时间
 //        mSDKMode = sdkMode; //保存使用的sdk模式
+//     } catch (Exception ex) {}
+
 //    }
-//
+
 //    /**
 //     * @brief 是否使用VPN功能模式
 //     */
@@ -153,10 +177,10 @@ public class MainApplication extends Application implements ReactApplication {
 //        if (mSDKMode == SFSDKMode.MODE_SANDBOX) {
 //            return false;
 //        }
-//
+
 //        return true;
 //    }
-//
+
 //    /**
 //     * @brief 是否使用安全沙箱功能模式
 //     */
@@ -164,10 +188,10 @@ public class MainApplication extends Application implements ReactApplication {
 //        if (mSDKMode == SFSDKMode.MODE_VPN) {
 //            return false;
 //        }
-//
+
 //        return true;
 //    }
-//
+
 //    /**
 //     * @brief 设置SDK网络超时时间，以秒为单位，不设置默认为30秒
 //     */

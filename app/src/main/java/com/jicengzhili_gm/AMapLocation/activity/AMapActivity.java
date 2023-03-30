@@ -169,7 +169,7 @@ public class AMapActivity  extends Activity implements View.OnClickListener,AMap
                 if(date_tv.equals(Utils.formatUTC(System.currentTimeMillis(), "yyyy-MM-dd"))) { //当天的位置进行刷新
 
                     LocationBean location = (LocationBean) intent.getSerializableExtra("location");
-                    //Toast.makeText(mContext, "FRESH_LOCATION_POINT lng:"+location.getLongitude(), Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(mContext, "FRESH_LOCATION_POINT lng:"+location.getLongitude(), Toast.LENGTH_SHORT).show();
 
                     freshPolylineInPlayGround(new LatLng(location.getLatitude(), location.getLongitude()));
                 }
@@ -331,7 +331,7 @@ public class AMapActivity  extends Activity implements View.OnClickListener,AMap
         if(!Constant.isQiandao){ //未签到
             AMapLocation loc = locationClient.getLastKnownLocation();
             LocationBean bean = null;
-            if(loc!=null){
+            if(loc!=null ){
                 bean = new LocationBean();
 
                 LatLonPoint wgsPoint = Converter.toWGS84Point(loc.getLatitude(), loc.getLongitude());

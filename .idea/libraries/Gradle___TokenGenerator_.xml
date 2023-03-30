@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: :TokenGenerator:">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/libs/TokenGenerator.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

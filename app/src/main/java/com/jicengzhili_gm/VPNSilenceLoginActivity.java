@@ -197,7 +197,7 @@ public class VPNSilenceLoginActivity extends Activity implements SFAuthResultLis
                     return;
                 }
 
-                showErrorMessage(message.mErrStr);
+                showErrorMessage("您的VPN链接中断或者网络出现异常，请重新链接VPN或退出系统重新登录。");
             }
         });
     }
