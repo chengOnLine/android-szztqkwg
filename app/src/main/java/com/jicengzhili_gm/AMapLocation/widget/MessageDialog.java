@@ -55,7 +55,7 @@ public class MessageDialog extends Dialog implements
         txtQiantui= (EditText)findViewById(R.id.txtQiantui);
         DivQiantui= (LinearLayout)findViewById(R.id.DivQiantui);
 
-        Log.e("alen", "初始化dialog2");
+        Log.e("alen", "初始化dialog");
     }
 
     public void showDialog(String text,MessageDialogCallBack mCallBack) {
@@ -83,15 +83,14 @@ public class MessageDialog extends Dialog implements
         // TODO Auto-generated method stub
         int i = arg0.getId();
         if (i == R.id.button_cancel) {
+
+            String txtDesc=txtQiantui.getText().toString();
+            Constant.txtQiantuiDesc=txtDesc;
+
             dismiss();
             mCallBack.cancel();
 
         } else if (i == R.id.button_sure) {
-
-            String txtDesc=txtQiantui.getText().toString();
-            Log.e("alen", "签退备注1" + txtDesc);
-            Constant.txtQiantuiDesc=txtDesc;
-
             dismiss();
             mCallBack.sure();
 

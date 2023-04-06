@@ -139,11 +139,12 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.jicengzhili_gm"
+        // applicationId "com.jicengzhili_gm"
+         applicationId "com.session.html"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 10002
-        versionName "1.0.2"
+        versionCode 200038
+        versionName "2.0.38"
         ndk {
 //            abiFilters "armeabi-v7a", "x86_64","arm64-v8a"
             abiFilters "armeabi-v7a", "x86_64"
@@ -157,15 +158,16 @@ android {
             reset()
             enable enableSeparateBuildPerCPUArchitecture
             universalApk false  // If true, also generate a universal APK
-            include "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
+            // include "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
+            include "armeabi-v7a", "x86", "x86_64"
         }
     }
     signingConfigs {
         debug {
-             storeFile file('debug.keystore')
-             storePassword 'android'
-             keyAlias 'androiddebugkey'
-             keyPassword 'android'
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
 
 //            storeFile file('jczl_gm.keystore')
 //            keyAlias 'jczl_gm'
@@ -175,10 +177,10 @@ android {
 
         release {
 
-            storeFile file('debug.keystore')
-            storePassword 'android'
-            keyAlias 'androiddebugkey'
-            keyPassword 'android'
+            // storeFile file('debug.keystore')
+            // storePassword 'android'
+            // keyAlias 'androiddebugkey'
+            // keyPassword 'android'
 
             if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
                 v1SigningEnabled true
@@ -277,7 +279,7 @@ dependencies {
 
     // implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
-    implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation "com.facebook.react:react-native:0.67.0"  // From node_modules
 //    implementation ("com.facebook.react:react-native:0.55.4"){force=true}  // From node_modules
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
@@ -286,10 +288,10 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
 
     implementation 'com.google.code.gson:gson:2.8.2'
-//
-   implementation(name: 'TokenGenerator', ext: 'jar')
-   implementation(name: 'SangforSDK', ext: 'aar')  //引入sdk文件
-   implementation (name:"AMap3DMap_9.1.0_AMapLocation_6.1.0_20220406",ext:"aar")
+
+    implementation(name: 'TokenGenerator', ext: 'jar')
+    implementation(name: 'SangforSDK', ext: 'aar')  //引入sdk文件
+    implementation (name:"AMap3DMap_9.1.0_AMapLocation_6.1.0_20220406",ext:"aar")
 
 }
 

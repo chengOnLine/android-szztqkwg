@@ -24,6 +24,8 @@ import com.sangfor.sdk.base.SFAuthType;
 import com.sangfor.sdk.base.SFBaseMessage;
 import com.sangfor.sdk.base.SFChangePswMessage;
 import com.sangfor.sdk.base.SFConstants;
+import com.sangfor.sdk.base.SFSDKFlags;
+import com.sangfor.sdk.base.SFSDKMode;
 import com.sangfor.sdk.utils.SFLogN;
 import com.jicengzhili_gm.sangfor.utils.Constants;
 import com.jicengzhili_gm.sangfor.utils.PermissionUtil;
@@ -63,14 +65,21 @@ public class VPNSilenceLoginActivity extends Activity implements SFAuthResultLis
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_vpnsilencelogin);
 
-        SFMobileSecuritySDK.getInstance().setAuthResultListener(this);
+        try{
+            SFMobileSecuritySDK.getInstance().setAuthResultListener(this);
 
-        showWaitingDialog(false);
-        SFMobileSecuritySDK.getInstance().startPasswordAuth(mVpnAddress, mUserName, mUserPassword);
+            showWaitingDialog(false);
+            SFMobileSecuritySDK.getInstance().startPasswordAuth(mVpnAddress, mUserName, mUserPassword);
 
-        Constants.activityList.add(this);
+            Constants.activityList.add(this);
+
+        }catch (Exception ex){
+//            showErrorMessage("您的VPN链接中断或者网络出现异常，请切换网络重试");
+            Toast.makeText(VPNSilenceLoginActivity.this, "您的VPN链接中断或者网络出现异常，请关闭WiFi重试", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

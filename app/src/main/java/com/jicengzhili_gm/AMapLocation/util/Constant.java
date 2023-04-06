@@ -46,7 +46,8 @@ public class Constant {
 
 
     public static final String SETTING_23D = "SETTING_23D";
-    public static final String REQUEST_URL = "https://mdajtest.szzt.com.cn"; //测试接口
+    // public static final String REQUEST_URL = "http://10.255.33.30:7050"; //测试接口
+    public static final String REQUEST_URL = "http://10.143.10.67:8091"; 
     public static final String masterPassword="AndroidZLT";
     public static final String requestAddress="683B95F7528598594D8EA06A81C8188943EFEA0077F28F3993EACE87DF677A880DABF6ACB6AAA36B7A1BDA7990773338";
 
