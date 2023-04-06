@@ -180,14 +180,14 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
 
-//            if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
-//                v1SigningEnabled true
-//                v2SigningEnabled true
-//                storeFile file(MYAPP_RELEASE_STORE_FILE)
-//                storePassword MYAPP_RELEASE_STORE_PASSWORD
-//                keyAlias MYAPP_RELEASE_KEY_ALIAS
-//                keyPassword MYAPP_RELEASE_KEY_PASSWORD
-//            }
+            if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
+                v1SigningEnabled true
+                v2SigningEnabled true
+                storeFile file(MYAPP_RELEASE_STORE_FILE)
+                storePassword MYAPP_RELEASE_STORE_PASSWORD
+                keyAlias MYAPP_RELEASE_KEY_ALIAS
+                keyPassword MYAPP_RELEASE_KEY_PASSWORD
+            }
         }
     }
     buildTypes {
